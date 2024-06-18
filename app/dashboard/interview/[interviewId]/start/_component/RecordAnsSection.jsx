@@ -79,8 +79,8 @@ function RecordAnsSection({ mockInterviewQuestions, activeQuestionIndex, intervi
 
     const resp = await db.insert(UserAnswer).values({
       mockId: interviewData?.mockId,
-      question: mockInterviewQuestions[activeQuestionIndex]?.Question,
-      correctAns: mockInterviewQuestions[activeQuestionIndex]?.Answer,
+      question: mockInterviewQuestions[activeQuestionIndex]?.question,
+      correctAns: mockInterviewQuestions[activeQuestionIndex]?.answer,
       userAns: userAnswer,
       feedback: JsonFeedbackResp?.feedback,
       rating: JsonFeedbackResp?.rating,
@@ -88,10 +88,10 @@ function RecordAnsSection({ mockInterviewQuestions, activeQuestionIndex, intervi
       createdAt: moment().format('DD-MM-yyyy')
     });
 
-    console.log("Response from DB insert: ", resp); // Debugging log
+   // console.log("Response from DB insert: ", resp); // Debugging log
 
     if (resp) {
-      toast('User Answer Recorded Successfully');
+      toast('User Answer Recorded Successfully', { duration: 2000 });
     } else {
       console.error("Failed to insert data into the database"); // Debugging log
     }

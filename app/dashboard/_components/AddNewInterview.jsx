@@ -34,7 +34,7 @@ const {user}=useUser();
         e.preventDefault()
         console.log(jobDesc,jobExperience,jobPosition);
 
-        const InputPrompt="job Position: "+jobPosition+" , Job Description: "+jobDesc+", Years of Experience: "+jobExperience+" , Depends on this information please give me 5 Interview question with Answered in Json Format, Give Question and Answered as field in JSON"
+        const InputPrompt="job Position: "+jobPosition+" , Job Description: "+jobDesc+", Years of Experience: "+jobExperience+" , Depends on this information please give me 5 mostly asked Interview question with Answers in Json Format, Give question field and answer field in JSON "
    const result=await chatSession.sendMessage(InputPrompt);
    console.log(result);
    const MockJsonResp=(result.response.text()).replace('```json','').replace('```','')

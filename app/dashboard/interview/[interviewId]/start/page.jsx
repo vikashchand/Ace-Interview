@@ -30,7 +30,7 @@ const [activeQuestionIndex,setActiveQuestionIndex]=useState(0);
 
   return (
     <div>
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-4'>
     <QuestionsSection mockInterviewQuestions={mockInterviewQuestions}
     activeQuestionIndex={activeQuestionIndex}
     />
@@ -40,7 +40,7 @@ const [activeQuestionIndex,setActiveQuestionIndex]=useState(0);
     activeQuestionIndex={activeQuestionIndex} interviewData={interviewData} />
     </div>
     
-<div className='flex justify-end gap-6 ' >
+<div className='flex justify-end gap-1 ' >
 { activeQuestionIndex >0 &&
 <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex-1)} >Previous Question</Button>}
 { activeQuestionIndex !=mockInterviewQuestions?.length-1 &&<Button  onClick={()=>setActiveQuestionIndex(activeQuestionIndex+1)} >Next Question</Button>}
